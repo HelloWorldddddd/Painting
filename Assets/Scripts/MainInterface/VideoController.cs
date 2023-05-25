@@ -10,14 +10,14 @@ public class VideoController : MonoBehaviour
     public VideoPlayer usageVideo;    //用法视频
     public VideoPlayer patternVideo;    //句法视频
 
-    public Button playButton;   //播放按钮
+    public Button bigPlayButton;   //屏幕中央播放按钮
     public Button leftButton;
     public Button rightButton;
     public Slider videoSlider;  //进度条
     private bool isPlaying;
     private videoNames nowPlayingName;  //正在播放视频的名字
     private VideoPlayer nowPlayingVideo;    //正在播放的视频
-    private bool isPressedSliderButton; //是否正在按下滑动条
+    // private bool isPressedSliderButton; //是否正在按下滑动条
 
     void Start()
     {
@@ -42,12 +42,14 @@ public class VideoController : MonoBehaviour
         {
             nowPlayingVideo.Play();
             isPlaying=true;
+            bigPlayButton.gameObject.SetActive(false);
             // Debug.Log("播："+isPlaying);
         }
         else
         {
             nowPlayingVideo.Pause();
             isPlaying=false;
+            bigPlayButton.gameObject.SetActive(true);
             // Debug.Log("停："+isPlaying);
         }
     }
@@ -62,6 +64,7 @@ public class VideoController : MonoBehaviour
                 nowPlayingName=videoNames.patternVideo;
                 nowPlayingVideo=patternVideo;
                 isPlaying=false;
+                bigPlayButton.gameObject.SetActive(true);
                 videoSlider.value=0;
                 break;
             case videoNames.patternVideo:
@@ -70,6 +73,7 @@ public class VideoController : MonoBehaviour
                 nowPlayingName=videoNames.usageVideo;
                 nowPlayingVideo=usageVideo;
                 isPlaying=false;
+                bigPlayButton.gameObject.SetActive(true);
                 videoSlider.value=0;
                 break;
             default :break;

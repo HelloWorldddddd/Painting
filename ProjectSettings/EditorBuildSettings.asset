@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AnimationMaking.unity
     guid: 1d5e4551ff1fcce4da25d86e8354ad08
+  - enabled: 1
+    path: Assets/Scenes/AnimationList.unity
+    guid: 35859b4beb4ab804badf22a64e100957
+  - enabled: 1
+    path: Assets/Scenes/MyMaterials.unity
+    guid: 026e2aeb3d3de1548b87e274c6786592
   m_configObjects: {}
