@@ -9,8 +9,8 @@ public class animation : MonoBehaviour
     private int sceneFlag = 0;
     public Image sceneBackground;
     private input.SceneStruct[] sceneScript;
-    private float panelWidth;
-    private float panelHeight;
+    public float panelWidth;
+    public float panelHeight;
     private GameObject[] roles;
     private GameObject prop;
     private Animation act;
@@ -19,8 +19,8 @@ public class animation : MonoBehaviour
     void Start()
     {
         sceneScript = input.GetComponent<input>().script;
-        panelWidth = GameObject.Find("Canvas").GetComponent<RectTransform>().rect.width;
-        panelHeight = GameObject.Find("Canvas").GetComponent<RectTransform>().rect.height;
+        // panelWidth = GameObject.Find("Canvas").GetComponent<RectTransform>().rect.width;
+        // panelHeight = GameObject.Find("Canvas").GetComponent<RectTransform>().rect.height;
     }
 
 
@@ -70,6 +70,7 @@ public class animation : MonoBehaviour
         
         Sprite backgroundSprite = Resources.Load<Sprite>(cutString(sceneScript[sceneFlag].background)); //资源名
         sceneBackground.sprite = backgroundSprite;
+        sceneBackground.color=new Color(1f,1f,1f,1f);
     }
     private void loadRole()
     {
